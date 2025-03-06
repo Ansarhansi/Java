@@ -1,0 +1,8 @@
+Êþº¾   ? 
+       java/lang/Object <init> ()V	  	  
+ 
+  java/lang/System out Ljava/io/PrintStream;  Door is open
+       java/io/PrintStream  println (Ljava/lang/String;)V  
+Door is close   Door Code LineNumberTable main 
+SourceFile 	Door.java !                    *· ±            	       1     ²  
+¶ ²  ¶ ±                     
