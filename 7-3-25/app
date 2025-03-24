@@ -1,0 +1,53 @@
+public class DeliveryAppln {
+
+    static String[] deliveryname = {null, null, null, null};
+    static int index = 0;
+
+    public static void displayName() {
+        for (int i = 0; i < deliveryname.length; i++) {
+            System.out.println(deliveryname[i]);
+        }
+    }
+
+    public static boolean searchName(String appname) {
+      
+        for (int i = 0; i < index; i++) {
+            if (deliveryname[i] != null && deliveryname[i].equalsIgnoreCase(appname)) {
+                return true; // App name exists
+            }
+        }
+        return false; 
+    }
+
+    public static void listOfApplication(String appname) {
+        if (deliveryname != null) {
+           
+            if (searchName(appname)) {
+                System.out.println("App name \"" already exists.");
+                return;
+            }
+
+            
+            if (index < deliveryname.length) {
+                deliveryname[index] = appname;
+                index++;
+                System.out.println("App \"" + appname + "\" added successfully.");
+            } else {
+                System.out.println("List is full, we cannot add \"" + appname + "\".");
+            }
+        } else {
+            System.out.println("DeliveryApp is null.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Test cases
+        listOfApplication("Zomato");
+        listOfApplication("Swiggy");
+        listOfApplication("Zomato"); // Duplicate entry
+        listOfApplication("UberEats");
+        listOfApplication("Dunzo");
+        listOfApplication("Zepto"); // List is full
+        displayName();
+    }
+}
